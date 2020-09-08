@@ -7,5 +7,6 @@ stdenv.mkDerivation {
     libiberty
     zlib
     doxygen
+    radare2
   ];
 }

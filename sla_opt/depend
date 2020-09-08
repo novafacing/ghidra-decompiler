@@ -1,0 +1,63 @@
+sla_opt/xml.o sla_opt/depend : xml.cc xml.hh types.h
+sla_opt/space.o sla_opt/depend : space.cc space.hh error.hh types.h xml.hh translate.hh \
+ pcoderaw.hh address.hh opbehavior.hh opcodes.hh float.hh
+sla_opt/float.o sla_opt/depend : float.cc float.hh xml.hh types.h address.hh space.hh error.hh
+sla_opt/address.o sla_opt/depend : address.cc address.hh space.hh error.hh types.h xml.hh \
+ translate.hh pcoderaw.hh opbehavior.hh opcodes.hh float.hh
+sla_opt/pcoderaw.o sla_opt/depend : pcoderaw.cc pcoderaw.hh address.hh space.hh error.hh types.h \
+ xml.hh opbehavior.hh opcodes.hh translate.hh float.hh
+sla_opt/translate.o sla_opt/depend : translate.cc translate.hh pcoderaw.hh address.hh space.hh \
+ error.hh types.h xml.hh opbehavior.hh opcodes.hh float.hh
+sla_opt/opcodes.o sla_opt/depend : opcodes.cc opcodes.hh types.h
+sla_opt/globalcontext.o sla_opt/depend : globalcontext.cc globalcontext.hh pcoderaw.hh address.hh \
+ space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh partmap.hh
+sla_opt/sleigh.o sla_opt/depend : sleigh.cc sleigh.hh sleighbase.hh translate.hh pcoderaw.hh \
+ address.hh space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh \
+ float.hh slghsymbol.hh semantics.hh context.hh globalcontext.hh \
+ partmap.hh slghpatexpress.hh slghpattern.hh loadimage.hh
+sla_opt/pcodeparse.o sla_opt/depend : pcodeparse.cc pcodeparse.hh pcodecompile.hh slghsymbol.hh \
+ semantics.hh context.hh globalcontext.hh pcoderaw.hh address.hh space.hh \
+ error.hh types.h xml.hh opbehavior.hh opcodes.hh partmap.hh \
+ slghpatexpress.hh slghpattern.hh sleighbase.hh translate.hh float.hh
+sla_opt/pcodecompile.o sla_opt/depend : pcodecompile.cc pcodecompile.hh slghsymbol.hh \
+ semantics.hh context.hh globalcontext.hh pcoderaw.hh address.hh space.hh \
+ error.hh types.h xml.hh opbehavior.hh opcodes.hh partmap.hh \
+ slghpatexpress.hh slghpattern.hh
+sla_opt/sleighbase.o sla_opt/depend : sleighbase.cc sleighbase.hh translate.hh pcoderaw.hh \
+ address.hh space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh \
+ float.hh slghsymbol.hh semantics.hh context.hh globalcontext.hh \
+ partmap.hh slghpatexpress.hh slghpattern.hh
+sla_opt/slghsymbol.o sla_opt/depend : slghsymbol.cc slghsymbol.hh semantics.hh context.hh \
+ globalcontext.hh pcoderaw.hh address.hh space.hh error.hh types.h xml.hh \
+ opbehavior.hh opcodes.hh partmap.hh slghpatexpress.hh slghpattern.hh \
+ sleighbase.hh translate.hh float.hh
+sla_opt/slghpatexpress.o sla_opt/depend : slghpatexpress.cc slghpatexpress.hh slghpattern.hh \
+ context.hh globalcontext.hh pcoderaw.hh address.hh space.hh error.hh \
+ types.h xml.hh opbehavior.hh opcodes.hh partmap.hh sleighbase.hh \
+ translate.hh float.hh slghsymbol.hh semantics.hh
+sla_opt/slghpattern.o sla_opt/depend : slghpattern.cc slghpattern.hh context.hh globalcontext.hh \
+ pcoderaw.hh address.hh space.hh error.hh types.h xml.hh opbehavior.hh \
+ opcodes.hh partmap.hh
+sla_opt/semantics.o sla_opt/depend : semantics.cc semantics.hh context.hh globalcontext.hh \
+ pcoderaw.hh address.hh space.hh error.hh types.h xml.hh opbehavior.hh \
+ opcodes.hh partmap.hh translate.hh float.hh
+sla_opt/context.o sla_opt/depend : context.cc context.hh globalcontext.hh pcoderaw.hh address.hh \
+ space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh partmap.hh \
+ slghsymbol.hh semantics.hh slghpatexpress.hh slghpattern.hh translate.hh \
+ float.hh
+sla_opt/filemanage.o sla_opt/depend : filemanage.cc filemanage.hh
+sla_opt/slgh_compile.o sla_opt/depend : slgh_compile.cc slgh_compile.hh sleighbase.hh \
+ translate.hh pcoderaw.hh address.hh space.hh error.hh types.h xml.hh \
+ opbehavior.hh opcodes.hh float.hh slghsymbol.hh semantics.hh context.hh \
+ globalcontext.hh partmap.hh slghpatexpress.hh slghpattern.hh \
+ pcodecompile.hh filemanage.hh
+sla_opt/slghparse.o sla_opt/depend : slghparse.cc slgh_compile.hh sleighbase.hh translate.hh \
+ pcoderaw.hh address.hh space.hh error.hh types.h xml.hh opbehavior.hh \
+ opcodes.hh float.hh slghsymbol.hh semantics.hh context.hh \
+ globalcontext.hh partmap.hh slghpatexpress.hh slghpattern.hh \
+ pcodecompile.hh filemanage.hh
+sla_opt/slghscan.o sla_opt/depend : slghscan.cc slgh_compile.hh sleighbase.hh translate.hh \
+ pcoderaw.hh address.hh space.hh error.hh types.h xml.hh opbehavior.hh \
+ opcodes.hh float.hh slghsymbol.hh semantics.hh context.hh \
+ globalcontext.hh partmap.hh slghpatexpress.hh slghpattern.hh \
+ pcodecompile.hh filemanage.hh slghparse.tab.hh

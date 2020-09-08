@@ -202,7 +202,7 @@ void SleighArchitecture::resolveArchitecture(void)
 void SleighArchitecture::buildSpecFile(DocumentStorage &store)
 
 { // Given a specific language, make sure relevant spec files are loaded
-  bool language_reuse = isTranslateReused();
+  bool language_reuse = false; //isTranslateReused();
   const LanguageDescription &language(description[languageindex]);
   string compiler = archid.substr(archid.rfind(':')+1);
   const CompilerTag &compilertag( language.getCompiler(compiler));
@@ -216,6 +216,11 @@ void SleighArchitecture::buildSpecFile(DocumentStorage &store)
   specpaths.findFile(compilerfile,compilertag.getSpec());
   if (!language_reuse)
     specpaths.findFile(slafile,language.getSlaFile());
+
+  std::cout << language.getProcessorSpec() << compilertag.getSpec() << language.getSlaFile() << std::endl;
+  std::cout << "Proc: " << processorfile << std::endl;
+  std::cout << "Comp: " << compilerfile << std::endl;
+  std::cout << "Sla: " << slafile << std::endl;
   
   try {
     Document *doc = store.openDocument(processorfile);

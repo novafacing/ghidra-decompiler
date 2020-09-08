@@ -23,6 +23,8 @@
 #include <cmath>
 #endif
 
+#include <iostream>
+
 vector<ArchitectureCapability *> ArchitectureCapability::thelist;
 
 const uint4 ArchitectureCapability::majorversion = 4;
@@ -1123,6 +1125,7 @@ void Architecture::parseCompilerConfig(DocumentStorage &store)
 
   for(iter=list.begin();iter!=list.end();++iter) {
     const string &elname( (*iter)->getName() );
+    std::cout << "Parsing " << elname << std::endl;
     if (elname == "default_proto")
       parseDefaultProto(*iter);
     else if (elname == "prototype")

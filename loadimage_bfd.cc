@@ -78,6 +78,13 @@ void LoadImageBfd::open(void)
   if (thebfd == (bfd *)0) {
     string errmsg="Unable to open image file: ";
     errmsg += filename;
+    errmsg += " with target " + target + "\n";
+    errmsg += "Try: \n";
+    const char ** targets = bfd_target_list();
+    while (*targets != NULL) {
+        errmsg += " " + std::string(*targets);
+        targets++;
+    }
     throw LowlevelError(errmsg);
   }
   if (!bfd_check_format( thebfd, bfd_object)) {
