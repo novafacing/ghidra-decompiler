@@ -18,11 +18,19 @@ nix-shell
 make
 ```
 
+To make the ghidra_dbg decompiler which we talk to with bindara, do:
+```sh
+nix-shell
+make -j9 ghidra_dbg
+```
+
 ### Documentation
 
 ```
 make doc
 ```
+
+Protip: the docs are BAD
 
 ## Usage
 
