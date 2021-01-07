@@ -114,7 +114,7 @@ EXECS=decomp_dbg decomp_opt ghidra_dbg ghidra_opt sleigh_dbg sleigh_opt libdecom
 COMMANDLINE_NAMES=$(CORE) $(DECCORE) $(EXTRA) $(SLEIGH) consolemain
 COMMANDLINE_DEBUG=-DCPUI_DEBUG -D__TERMINAL__
 COMMANDLINE_OPT=-D__TERMINAL__
-TEST_NAMES=$(CORE) $(DECCORE) $(EXTRA) $(SLEIGH) test
+TEST_NAMES=$(CORE) $(DECCORE) $(EXTRA) $(SLEIGH) libdecomp_dbg
 
 GHIDRA_NAMES=$(CORE) $(DECCORE) $(GHIDRA)
 GHIDRA_NAMES_DBG=$(GHIDRA_NAMES) callgraph ifacedecomp ifaceterm interface
@@ -255,8 +255,8 @@ sleigh_dbg:	$(SLEIGH_DBG_OBJS)
 sleigh_opt:	$(SLEIGH_OPT_OBJS)
 	$(CXX) $(OPT_CXXFLAGS) $(ADDITIONAL_FLAGS) $(MAKE_STATIC) $(ARCH_TYPE) -o sleigh_opt $(SLEIGH_OPT_OBJS) $(LNK)
 
-test: $(TEST_DBG_OBJS)
-	$(CXX) $(DBG_CXXFLAGS) $(ARCH_TYPE) -o test $? $(BFDLIB) $(LNK)
+libdecomp_dbg: $(TEST_DBG_OBJS)
+	$(CXX) $(DBG_CXXFLAGS) $(ARCH_TYPE) -o libdecomp_dbg $? $(BFDLIB) $(LNK)
 
 t2: $(TEST_DBG_OBJS)
 	$(CXX) $(DBG_CXXFLAGS) $(ARCH_TYPE) -o t2 $? $(BFDLIB) $(LNK)

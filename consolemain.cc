@@ -201,6 +201,7 @@ int main(int argc,char **argv)
     cerr << "Interface error during setup: " << err.explain << endl;
     exit(1);
   }
+
   IfaceCapability::registerAllCommands(status);	// Register commands for decompiler and all modules
 
   // Extra commands specific to the console application

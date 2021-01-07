@@ -188,5 +188,15 @@ Now, from here basically everything operates on functions, so we need to analyze
 Print program mapping (functions and addresses)
 
 ```
+read symbols
 print map
 ```
+
+To test decompile:
+
+```
+load file <filename>
+read symbols
+produce C out.c
+```
+
