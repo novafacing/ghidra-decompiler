@@ -1,3 +1,14 @@
+## Quickstart
+
+```
+nix-shell
+make
+make -j9 sleigh_opt
+./sleigh_opt -a ./specs
+make -j9 libdecomp_dbg
+./libdecomp_dbg <binary> <out_file_name.c> # (ex ./libdecomp_dbg tests/lab5-src/test_array out.c)
+```
+
 ## Dependencies
 
 ```
