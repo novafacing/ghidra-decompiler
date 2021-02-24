@@ -1,0 +1,3 @@
+xml.o: xml.cc xml.hh types.h
+space.o: space.cc space.hh error.hh types.h xml.hh translate.hh \
+ pcoderaw.hh address.hh opbehavior.hh opcodes.hh float.hh

@@ -1,0 +1,32 @@
+xml.o: xml.cc xml.hh types.h
+space.o: space.cc space.hh error.hh types.h xml.hh translate.hh \
+ pcoderaw.hh address.hh opbehavior.hh opcodes.hh float.hh
+float.o: float.cc float.hh xml.hh types.h address.hh space.hh error.hh
+address.o: address.cc address.hh space.hh error.hh types.h xml.hh \
+ translate.hh pcoderaw.hh opbehavior.hh opcodes.hh float.hh
+pcoderaw.o: pcoderaw.cc pcoderaw.hh address.hh space.hh error.hh types.h \
+ xml.hh opbehavior.hh opcodes.hh translate.hh float.hh
+translate.o: translate.cc translate.hh pcoderaw.hh address.hh space.hh \
+ error.hh types.h xml.hh opbehavior.hh opcodes.hh float.hh
+opcodes.o: opcodes.cc opcodes.hh types.h
+globalcontext.o: globalcontext.cc globalcontext.hh pcoderaw.hh address.hh \
+ space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh partmap.hh
+capability.o: capability.cc capability.hh types.h
+architecture.o: architecture.cc coreaction.hh ruleaction.hh action.hh \
+ block.hh jumptable.hh emulateutil.hh emulate.hh memstate.hh pcoderaw.hh \
+ address.hh space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh \
+ loadimage.hh translate.hh float.hh op.hh typeop.hh cpool.hh type.hh \
+ variable.hh varnode.hh cover.hh printlanguage.hh capability.hh cast.hh \
+ prettyprint.hh rangeutil.hh blockaction.hh funcdata.hh architecture.hh \
+ varmap.hh database.hh partmap.hh rangemap.hh pcodeinject.hh fspec.hh \
+ globalcontext.hh comment.hh userop.hh options.hh transform.hh \
+ prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh
+options.o: options.cc options.hh error.hh types.h xml.hh funcdata.hh \
+ architecture.hh capability.hh varmap.hh database.hh variable.hh \
+ varnode.hh pcoderaw.hh address.hh space.hh opbehavior.hh opcodes.hh \
+ cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh transform.hh prefersplit.hh override.hh heritage.hh merge.hh \
+ dynamic.hh flow.hh printc.hh

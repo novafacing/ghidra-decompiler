@@ -1,0 +1,4 @@
+Host Name			Architecture (x86, SPARC)	Endianess
+---------------------------------------------------------
+lore.cs.purdue.edu	SPARC						BIG
+data.cs.purdue.edu	x86							LITTLE

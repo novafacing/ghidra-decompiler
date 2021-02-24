@@ -1,0 +1,529 @@
+xml.o: xml.cc xml.hh types.h
+space.o: space.cc space.hh error.hh types.h xml.hh translate.hh \
+ pcoderaw.hh address.hh opbehavior.hh opcodes.hh float.hh
+float.o: float.cc float.hh xml.hh types.h address.hh space.hh error.hh
+address.o: address.cc address.hh space.hh error.hh types.h xml.hh \
+ translate.hh pcoderaw.hh opbehavior.hh opcodes.hh float.hh
+pcoderaw.o: pcoderaw.cc pcoderaw.hh address.hh space.hh error.hh types.h \
+ xml.hh opbehavior.hh opcodes.hh translate.hh float.hh
+translate.o: translate.cc translate.hh pcoderaw.hh address.hh space.hh \
+ error.hh types.h xml.hh opbehavior.hh opcodes.hh float.hh
+opcodes.o: opcodes.cc opcodes.hh types.h
+globalcontext.o: globalcontext.cc globalcontext.hh pcoderaw.hh address.hh \
+ space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh partmap.hh
+capability.o: capability.cc capability.hh types.h
+architecture.o: architecture.cc coreaction.hh ruleaction.hh action.hh \
+ block.hh jumptable.hh emulateutil.hh emulate.hh memstate.hh pcoderaw.hh \
+ address.hh space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh \
+ loadimage.hh translate.hh float.hh op.hh typeop.hh cpool.hh type.hh \
+ variable.hh varnode.hh cover.hh printlanguage.hh capability.hh cast.hh \
+ prettyprint.hh rangeutil.hh blockaction.hh funcdata.hh architecture.hh \
+ varmap.hh database.hh partmap.hh rangemap.hh pcodeinject.hh fspec.hh \
+ globalcontext.hh comment.hh userop.hh options.hh transform.hh \
+ prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh
+options.o: options.cc options.hh error.hh types.h xml.hh funcdata.hh \
+ architecture.hh capability.hh varmap.hh database.hh variable.hh \
+ varnode.hh pcoderaw.hh address.hh space.hh opbehavior.hh opcodes.hh \
+ cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh transform.hh prefersplit.hh override.hh heritage.hh merge.hh \
+ dynamic.hh flow.hh printc.hh
+graph.o: graph.cc graph.hh funcdata.hh architecture.hh capability.hh \
+ types.h varmap.hh database.hh variable.hh varnode.hh pcoderaw.hh \
+ address.hh space.hh error.hh xml.hh opbehavior.hh opcodes.hh cover.hh \
+ type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh override.hh heritage.hh \
+ merge.hh dynamic.hh
+cover.o: cover.cc cover.hh type.hh address.hh space.hh error.hh types.h \
+ xml.hh block.hh jumptable.hh emulateutil.hh emulate.hh memstate.hh \
+ pcoderaw.hh opbehavior.hh opcodes.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh variable.hh varnode.hh printlanguage.hh \
+ capability.hh cast.hh prettyprint.hh rangeutil.hh
+block.o: block.cc block.hh jumptable.hh emulateutil.hh emulate.hh \
+ memstate.hh pcoderaw.hh address.hh space.hh error.hh types.h xml.hh \
+ opbehavior.hh opcodes.hh loadimage.hh translate.hh float.hh op.hh \
+ typeop.hh cpool.hh type.hh variable.hh varnode.hh cover.hh \
+ printlanguage.hh capability.hh cast.hh prettyprint.hh rangeutil.hh \
+ funcdata.hh architecture.hh varmap.hh database.hh partmap.hh rangemap.hh \
+ action.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh \
+ options.hh transform.hh prefersplit.hh override.hh heritage.hh merge.hh \
+ dynamic.hh
+cast.o: cast.cc cast.hh type.hh address.hh space.hh error.hh types.h \
+ xml.hh op.hh typeop.hh cpool.hh variable.hh varnode.hh pcoderaw.hh \
+ opbehavior.hh opcodes.hh cover.hh printlanguage.hh capability.hh \
+ prettyprint.hh
+typeop.o: typeop.cc typeop.hh cpool.hh type.hh address.hh space.hh \
+ error.hh types.h xml.hh variable.hh varnode.hh pcoderaw.hh opbehavior.hh \
+ opcodes.hh cover.hh printlanguage.hh capability.hh cast.hh \
+ prettyprint.hh funcdata.hh architecture.hh varmap.hh database.hh \
+ partmap.hh rangemap.hh action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh loadimage.hh translate.hh float.hh op.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh override.hh heritage.hh \
+ merge.hh dynamic.hh
+database.o: database.cc database.hh variable.hh varnode.hh pcoderaw.hh \
+ address.hh space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh \
+ cover.hh type.hh partmap.hh rangemap.hh funcdata.hh architecture.hh \
+ capability.hh varmap.hh action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh loadimage.hh translate.hh float.hh op.hh \
+ typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh rangeutil.hh \
+ pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh
+cpool.o: cpool.cc cpool.hh type.hh address.hh space.hh error.hh types.h \
+ xml.hh
+comment.o: comment.cc comment.hh address.hh space.hh error.hh types.h \
+ xml.hh funcdata.hh architecture.hh capability.hh varmap.hh database.hh \
+ variable.hh varnode.hh pcoderaw.hh opbehavior.hh opcodes.hh cover.hh \
+ type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh userop.hh \
+ options.hh transform.hh prefersplit.hh override.hh heritage.hh merge.hh \
+ dynamic.hh
+fspec.o: fspec.cc fspec.hh op.hh typeop.hh cpool.hh type.hh address.hh \
+ space.hh error.hh types.h xml.hh variable.hh varnode.hh pcoderaw.hh \
+ opbehavior.hh opcodes.hh cover.hh printlanguage.hh capability.hh cast.hh \
+ prettyprint.hh rangemap.hh funcdata.hh architecture.hh varmap.hh \
+ database.hh partmap.hh action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh loadimage.hh translate.hh float.hh rangeutil.hh \
+ pcodeinject.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh
+action.o: action.cc action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh pcoderaw.hh address.hh space.hh error.hh types.h \
+ xml.hh opbehavior.hh opcodes.hh loadimage.hh translate.hh float.hh op.hh \
+ typeop.hh cpool.hh type.hh variable.hh varnode.hh cover.hh \
+ printlanguage.hh capability.hh cast.hh prettyprint.hh rangeutil.hh \
+ funcdata.hh architecture.hh varmap.hh database.hh partmap.hh rangemap.hh \
+ pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh \
+ coreaction.hh ruleaction.hh blockaction.hh
+loadimage.o: loadimage.cc loadimage.hh address.hh space.hh error.hh \
+ types.h xml.hh
+grammar.o: grammar.cc grammar.hh funcdata.hh architecture.hh \
+ capability.hh types.h varmap.hh database.hh variable.hh varnode.hh \
+ pcoderaw.hh address.hh space.hh error.hh xml.hh opbehavior.hh opcodes.hh \
+ cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh override.hh heritage.hh \
+ merge.hh dynamic.hh
+varnode.o: varnode.cc varnode.hh pcoderaw.hh address.hh space.hh error.hh \
+ types.h xml.hh opbehavior.hh opcodes.hh cover.hh type.hh funcdata.hh \
+ architecture.hh capability.hh varmap.hh database.hh variable.hh \
+ partmap.hh rangemap.hh action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh loadimage.hh translate.hh float.hh op.hh \
+ typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh rangeutil.hh \
+ pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh
+op.o: op.cc op.hh typeop.hh cpool.hh type.hh address.hh space.hh error.hh \
+ types.h xml.hh variable.hh varnode.hh pcoderaw.hh opbehavior.hh \
+ opcodes.hh cover.hh printlanguage.hh capability.hh cast.hh \
+ prettyprint.hh funcdata.hh architecture.hh varmap.hh database.hh \
+ partmap.hh rangemap.hh action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh loadimage.hh translate.hh float.hh rangeutil.hh \
+ pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh
+type.o: type.cc type.hh address.hh space.hh error.hh types.h xml.hh \
+ funcdata.hh architecture.hh capability.hh varmap.hh database.hh \
+ variable.hh varnode.hh pcoderaw.hh opbehavior.hh opcodes.hh cover.hh \
+ partmap.hh rangemap.hh action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh loadimage.hh translate.hh float.hh op.hh \
+ typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh rangeutil.hh \
+ pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh
+variable.o: variable.cc variable.hh varnode.hh pcoderaw.hh address.hh \
+ space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh cover.hh \
+ type.hh op.hh typeop.hh cpool.hh printlanguage.hh capability.hh cast.hh \
+ prettyprint.hh database.hh partmap.hh rangemap.hh
+varmap.o: varmap.cc varmap.hh database.hh variable.hh varnode.hh \
+ pcoderaw.hh address.hh space.hh error.hh types.h xml.hh opbehavior.hh \
+ opcodes.hh cover.hh type.hh partmap.hh rangemap.hh funcdata.hh \
+ architecture.hh capability.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh override.hh heritage.hh \
+ merge.hh dynamic.hh
+jumptable.o: jumptable.cc jumptable.hh emulateutil.hh emulate.hh \
+ memstate.hh pcoderaw.hh address.hh space.hh error.hh types.h xml.hh \
+ opbehavior.hh opcodes.hh loadimage.hh translate.hh float.hh op.hh \
+ typeop.hh cpool.hh type.hh variable.hh varnode.hh cover.hh \
+ printlanguage.hh capability.hh cast.hh prettyprint.hh rangeutil.hh \
+ flow.hh funcdata.hh architecture.hh varmap.hh database.hh partmap.hh \
+ rangemap.hh action.hh block.hh pcodeinject.hh fspec.hh globalcontext.hh \
+ comment.hh userop.hh options.hh transform.hh prefersplit.hh override.hh \
+ heritage.hh merge.hh dynamic.hh
+emulate.o: emulate.cc emulate.hh memstate.hh pcoderaw.hh address.hh \
+ space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh loadimage.hh \
+ translate.hh float.hh
+emulateutil.o: emulateutil.cc architecture.hh capability.hh types.h \
+ varmap.hh database.hh variable.hh varnode.hh pcoderaw.hh address.hh \
+ space.hh error.hh xml.hh opbehavior.hh opcodes.hh cover.hh type.hh \
+ partmap.hh rangemap.hh action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh loadimage.hh translate.hh float.hh op.hh \
+ typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh rangeutil.hh \
+ pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh
+flow.o: flow.cc flow.hh funcdata.hh architecture.hh capability.hh types.h \
+ varmap.hh database.hh variable.hh varnode.hh pcoderaw.hh address.hh \
+ space.hh error.hh xml.hh opbehavior.hh opcodes.hh cover.hh type.hh \
+ partmap.hh rangemap.hh action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh loadimage.hh translate.hh float.hh op.hh \
+ typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh rangeutil.hh \
+ pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh
+userop.o: userop.cc userop.hh typeop.hh cpool.hh type.hh address.hh \
+ space.hh error.hh types.h xml.hh variable.hh varnode.hh pcoderaw.hh \
+ opbehavior.hh opcodes.hh cover.hh printlanguage.hh capability.hh cast.hh \
+ prettyprint.hh funcdata.hh architecture.hh varmap.hh database.hh \
+ partmap.hh rangemap.hh action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh loadimage.hh translate.hh float.hh op.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ options.hh transform.hh prefersplit.hh override.hh heritage.hh merge.hh \
+ dynamic.hh
+funcdata.o: funcdata.cc funcdata.hh architecture.hh capability.hh types.h \
+ varmap.hh database.hh variable.hh varnode.hh pcoderaw.hh address.hh \
+ space.hh error.hh xml.hh opbehavior.hh opcodes.hh cover.hh type.hh \
+ partmap.hh rangemap.hh action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh loadimage.hh translate.hh float.hh op.hh \
+ typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh rangeutil.hh \
+ pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh
+funcdata_block.o: funcdata_block.cc funcdata.hh architecture.hh \
+ capability.hh types.h varmap.hh database.hh variable.hh varnode.hh \
+ pcoderaw.hh address.hh space.hh error.hh xml.hh opbehavior.hh opcodes.hh \
+ cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh override.hh heritage.hh \
+ merge.hh dynamic.hh flow.hh
+funcdata_op.o: funcdata_op.cc funcdata.hh architecture.hh capability.hh \
+ types.h varmap.hh database.hh variable.hh varnode.hh pcoderaw.hh \
+ address.hh space.hh error.hh xml.hh opbehavior.hh opcodes.hh cover.hh \
+ type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh override.hh heritage.hh \
+ merge.hh dynamic.hh flow.hh
+funcdata_varnode.o: funcdata_varnode.cc funcdata.hh architecture.hh \
+ capability.hh types.h varmap.hh database.hh variable.hh varnode.hh \
+ pcoderaw.hh address.hh space.hh error.hh xml.hh opbehavior.hh opcodes.hh \
+ cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh override.hh heritage.hh \
+ merge.hh dynamic.hh
+pcodeinject.o: pcodeinject.cc pcodeinject.hh emulateutil.hh emulate.hh \
+ memstate.hh pcoderaw.hh address.hh space.hh error.hh types.h xml.hh \
+ opbehavior.hh opcodes.hh loadimage.hh translate.hh float.hh op.hh \
+ typeop.hh cpool.hh type.hh variable.hh varnode.hh cover.hh \
+ printlanguage.hh capability.hh cast.hh prettyprint.hh architecture.hh \
+ varmap.hh database.hh partmap.hh rangemap.hh action.hh block.hh \
+ jumptable.hh rangeutil.hh fspec.hh globalcontext.hh comment.hh userop.hh \
+ options.hh transform.hh prefersplit.hh
+heritage.o: heritage.cc heritage.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh pcoderaw.hh address.hh space.hh error.hh types.h \
+ xml.hh opbehavior.hh opcodes.hh loadimage.hh translate.hh float.hh op.hh \
+ typeop.hh cpool.hh type.hh variable.hh varnode.hh cover.hh \
+ printlanguage.hh capability.hh cast.hh prettyprint.hh rangeutil.hh \
+ funcdata.hh architecture.hh varmap.hh database.hh partmap.hh rangemap.hh \
+ action.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh \
+ options.hh transform.hh prefersplit.hh override.hh merge.hh dynamic.hh
+prefersplit.o: prefersplit.cc prefersplit.hh varnode.hh pcoderaw.hh \
+ address.hh space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh \
+ cover.hh type.hh funcdata.hh architecture.hh capability.hh varmap.hh \
+ database.hh variable.hh partmap.hh rangemap.hh action.hh block.hh \
+ jumptable.hh emulateutil.hh emulate.hh memstate.hh loadimage.hh \
+ translate.hh float.hh op.hh typeop.hh cpool.hh printlanguage.hh cast.hh \
+ prettyprint.hh rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh \
+ comment.hh userop.hh options.hh transform.hh override.hh heritage.hh \
+ merge.hh dynamic.hh
+rangeutil.o: rangeutil.cc rangeutil.hh op.hh typeop.hh cpool.hh type.hh \
+ address.hh space.hh error.hh types.h xml.hh variable.hh varnode.hh \
+ pcoderaw.hh opbehavior.hh opcodes.hh cover.hh printlanguage.hh \
+ capability.hh cast.hh prettyprint.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh
+ruleaction.o: ruleaction.cc ruleaction.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh pcoderaw.hh address.hh space.hh \
+ error.hh types.h xml.hh opbehavior.hh opcodes.hh loadimage.hh \
+ translate.hh float.hh op.hh typeop.hh cpool.hh type.hh variable.hh \
+ varnode.hh cover.hh printlanguage.hh capability.hh cast.hh \
+ prettyprint.hh rangeutil.hh coreaction.hh blockaction.hh funcdata.hh \
+ architecture.hh varmap.hh database.hh partmap.hh rangemap.hh \
+ pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh \
+ subflow.hh
+subflow.o: subflow.cc subflow.hh funcdata.hh architecture.hh \
+ capability.hh types.h varmap.hh database.hh variable.hh varnode.hh \
+ pcoderaw.hh address.hh space.hh error.hh xml.hh opbehavior.hh opcodes.hh \
+ cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh override.hh heritage.hh \
+ merge.hh dynamic.hh
+blockaction.o: blockaction.cc blockaction.hh action.hh block.hh \
+ jumptable.hh emulateutil.hh emulate.hh memstate.hh pcoderaw.hh \
+ address.hh space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh \
+ loadimage.hh translate.hh float.hh op.hh typeop.hh cpool.hh type.hh \
+ variable.hh varnode.hh cover.hh printlanguage.hh capability.hh cast.hh \
+ prettyprint.hh rangeutil.hh funcdata.hh architecture.hh varmap.hh \
+ database.hh partmap.hh rangemap.hh pcodeinject.hh fspec.hh \
+ globalcontext.hh comment.hh userop.hh options.hh transform.hh \
+ prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh
+merge.o: merge.cc merge.hh op.hh typeop.hh cpool.hh type.hh address.hh \
+ space.hh error.hh types.h xml.hh variable.hh varnode.hh pcoderaw.hh \
+ opbehavior.hh opcodes.hh cover.hh printlanguage.hh capability.hh cast.hh \
+ prettyprint.hh funcdata.hh architecture.hh varmap.hh database.hh \
+ partmap.hh rangemap.hh action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh loadimage.hh translate.hh float.hh rangeutil.hh \
+ pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh override.hh heritage.hh dynamic.hh
+double.o: double.cc double.hh ruleaction.hh action.hh block.hh \
+ jumptable.hh emulateutil.hh emulate.hh memstate.hh pcoderaw.hh \
+ address.hh space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh \
+ loadimage.hh translate.hh float.hh op.hh typeop.hh cpool.hh type.hh \
+ variable.hh varnode.hh cover.hh printlanguage.hh capability.hh cast.hh \
+ prettyprint.hh rangeutil.hh funcdata.hh architecture.hh varmap.hh \
+ database.hh partmap.hh rangemap.hh pcodeinject.hh fspec.hh \
+ globalcontext.hh comment.hh userop.hh options.hh transform.hh \
+ prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh
+transform.o: transform.cc transform.hh varnode.hh pcoderaw.hh address.hh \
+ space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh cover.hh \
+ type.hh funcdata.hh architecture.hh capability.hh varmap.hh database.hh \
+ variable.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh prefersplit.hh override.hh heritage.hh merge.hh \
+ dynamic.hh
+coreaction.o: coreaction.cc coreaction.hh ruleaction.hh action.hh \
+ block.hh jumptable.hh emulateutil.hh emulate.hh memstate.hh pcoderaw.hh \
+ address.hh space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh \
+ loadimage.hh translate.hh float.hh op.hh typeop.hh cpool.hh type.hh \
+ variable.hh varnode.hh cover.hh printlanguage.hh capability.hh cast.hh \
+ prettyprint.hh rangeutil.hh blockaction.hh funcdata.hh architecture.hh \
+ varmap.hh database.hh partmap.hh rangemap.hh pcodeinject.hh fspec.hh \
+ globalcontext.hh comment.hh userop.hh options.hh transform.hh \
+ prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh condexe.hh \
+ double.hh subflow.hh
+condexe.o: condexe.cc condexe.hh funcdata.hh architecture.hh \
+ capability.hh types.h varmap.hh database.hh variable.hh varnode.hh \
+ pcoderaw.hh address.hh space.hh error.hh xml.hh opbehavior.hh opcodes.hh \
+ cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh override.hh heritage.hh \
+ merge.hh dynamic.hh
+override.o: override.cc override.hh database.hh variable.hh varnode.hh \
+ pcoderaw.hh address.hh space.hh error.hh types.h xml.hh opbehavior.hh \
+ opcodes.hh cover.hh type.hh partmap.hh rangemap.hh funcdata.hh \
+ architecture.hh capability.hh varmap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh heritage.hh merge.hh \
+ dynamic.hh
+dynamic.o: dynamic.cc dynamic.hh varnode.hh pcoderaw.hh address.hh \
+ space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh cover.hh \
+ type.hh funcdata.hh architecture.hh capability.hh varmap.hh database.hh \
+ variable.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh override.hh heritage.hh \
+ merge.hh crc32.hh
+crc32.o: crc32.cc crc32.hh types.h
+prettyprint.o: prettyprint.cc prettyprint.hh type.hh address.hh space.hh \
+ error.hh types.h xml.hh funcdata.hh architecture.hh capability.hh \
+ varmap.hh database.hh variable.hh varnode.hh pcoderaw.hh opbehavior.hh \
+ opcodes.hh cover.hh partmap.hh rangemap.hh action.hh block.hh \
+ jumptable.hh emulateutil.hh emulate.hh memstate.hh loadimage.hh \
+ translate.hh float.hh op.hh typeop.hh cpool.hh printlanguage.hh cast.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh override.hh heritage.hh \
+ merge.hh dynamic.hh
+printlanguage.o: printlanguage.cc printlanguage.hh capability.hh types.h \
+ cast.hh type.hh address.hh space.hh error.hh xml.hh prettyprint.hh \
+ funcdata.hh architecture.hh varmap.hh database.hh variable.hh varnode.hh \
+ pcoderaw.hh opbehavior.hh opcodes.hh cover.hh partmap.hh rangemap.hh \
+ action.hh block.hh jumptable.hh emulateutil.hh emulate.hh memstate.hh \
+ loadimage.hh translate.hh float.hh op.hh typeop.hh cpool.hh rangeutil.hh \
+ pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh
+printc.o: printc.cc printc.hh printlanguage.hh capability.hh types.h \
+ cast.hh type.hh address.hh space.hh error.hh xml.hh prettyprint.hh \
+ comment.hh funcdata.hh architecture.hh varmap.hh database.hh variable.hh \
+ varnode.hh pcoderaw.hh opbehavior.hh opcodes.hh cover.hh partmap.hh \
+ rangemap.hh action.hh block.hh jumptable.hh emulateutil.hh emulate.hh \
+ memstate.hh loadimage.hh translate.hh float.hh op.hh typeop.hh cpool.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh userop.hh \
+ options.hh transform.hh prefersplit.hh override.hh heritage.hh merge.hh \
+ dynamic.hh
+printjava.o: printjava.cc printjava.hh printc.hh printlanguage.hh \
+ capability.hh types.h cast.hh type.hh address.hh space.hh error.hh \
+ xml.hh prettyprint.hh comment.hh funcdata.hh architecture.hh varmap.hh \
+ database.hh variable.hh varnode.hh pcoderaw.hh opbehavior.hh opcodes.hh \
+ cover.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh rangeutil.hh pcodeinject.hh fspec.hh \
+ globalcontext.hh userop.hh options.hh transform.hh prefersplit.hh \
+ override.hh heritage.hh merge.hh dynamic.hh
+memstate.o: memstate.cc memstate.hh pcoderaw.hh address.hh space.hh \
+ error.hh types.h xml.hh opbehavior.hh opcodes.hh loadimage.hh \
+ translate.hh float.hh
+opbehavior.o: opbehavior.cc opbehavior.hh error.hh types.h opcodes.hh \
+ translate.hh pcoderaw.hh address.hh space.hh xml.hh float.hh
+paramid.o: paramid.cc paramid.hh funcdata.hh architecture.hh \
+ capability.hh types.h varmap.hh database.hh variable.hh varnode.hh \
+ pcoderaw.hh address.hh space.hh error.hh xml.hh opbehavior.hh opcodes.hh \
+ cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh override.hh heritage.hh \
+ merge.hh dynamic.hh
+bfd_arch.o: bfd_arch.cc bfd_arch.hh sleigh_arch.hh filemanage.hh \
+ architecture.hh capability.hh types.h varmap.hh database.hh variable.hh \
+ varnode.hh pcoderaw.hh address.hh space.hh error.hh xml.hh opbehavior.hh \
+ opcodes.hh cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh \
+ jumptable.hh emulateutil.hh emulate.hh memstate.hh loadimage.hh \
+ translate.hh float.hh op.hh typeop.hh cpool.hh printlanguage.hh cast.hh \
+ prettyprint.hh rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh \
+ comment.hh userop.hh options.hh transform.hh prefersplit.hh sleigh.hh \
+ sleighbase.hh slghsymbol.hh semantics.hh context.hh slghpatexpress.hh \
+ slghpattern.hh loadimage_bfd.hh
+callgraph.o: callgraph.cc callgraph.hh address.hh space.hh error.hh \
+ types.h xml.hh funcdata.hh architecture.hh capability.hh varmap.hh \
+ database.hh variable.hh varnode.hh pcoderaw.hh opbehavior.hh opcodes.hh \
+ cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh override.hh heritage.hh \
+ merge.hh dynamic.hh
+codedata.o: codedata.cc codedata.hh ifacedecomp.hh ifaceterm.hh \
+ interface.hh capability.hh types.h graph.hh funcdata.hh architecture.hh \
+ varmap.hh database.hh variable.hh varnode.hh pcoderaw.hh address.hh \
+ space.hh error.hh xml.hh opbehavior.hh opcodes.hh cover.hh type.hh \
+ partmap.hh rangemap.hh action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh loadimage.hh translate.hh float.hh op.hh \
+ typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh rangeutil.hh \
+ pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh \
+ grammar.hh callgraph.hh paramid.hh loadimage_bfd.hh
+ifacedecomp.o: ifacedecomp.cc ifacedecomp.hh ifaceterm.hh interface.hh \
+ capability.hh types.h graph.hh funcdata.hh architecture.hh varmap.hh \
+ database.hh variable.hh varnode.hh pcoderaw.hh address.hh space.hh \
+ error.hh xml.hh opbehavior.hh opcodes.hh cover.hh type.hh partmap.hh \
+ rangemap.hh action.hh block.hh jumptable.hh emulateutil.hh emulate.hh \
+ memstate.hh loadimage.hh translate.hh float.hh op.hh typeop.hh cpool.hh \
+ printlanguage.hh cast.hh prettyprint.hh rangeutil.hh pcodeinject.hh \
+ fspec.hh globalcontext.hh comment.hh userop.hh options.hh transform.hh \
+ prefersplit.hh override.hh heritage.hh merge.hh dynamic.hh grammar.hh \
+ callgraph.hh paramid.hh pcodeparse.hh pcodecompile.hh slghsymbol.hh \
+ semantics.hh context.hh slghpatexpress.hh slghpattern.hh sleighbase.hh \
+ blockaction.hh
+ifaceterm.o: ifaceterm.cc ifaceterm.hh interface.hh capability.hh types.h
+inject_sleigh.o: inject_sleigh.cc inject_sleigh.hh pcodeinject.hh \
+ emulateutil.hh emulate.hh memstate.hh pcoderaw.hh address.hh space.hh \
+ error.hh types.h xml.hh opbehavior.hh opcodes.hh loadimage.hh \
+ translate.hh float.hh op.hh typeop.hh cpool.hh type.hh variable.hh \
+ varnode.hh cover.hh printlanguage.hh capability.hh cast.hh \
+ prettyprint.hh sleigh.hh sleighbase.hh slghsymbol.hh semantics.hh \
+ context.hh globalcontext.hh partmap.hh slghpatexpress.hh slghpattern.hh \
+ pcodeparse.hh pcodecompile.hh architecture.hh varmap.hh database.hh \
+ rangemap.hh action.hh block.hh jumptable.hh rangeutil.hh fspec.hh \
+ comment.hh userop.hh options.hh transform.hh prefersplit.hh
+interface.o: interface.cc interface.hh capability.hh types.h
+libdecomp.o: libdecomp.cc libdecomp.hh architecture.hh capability.hh \
+ types.h varmap.hh database.hh variable.hh varnode.hh pcoderaw.hh \
+ address.hh space.hh error.hh xml.hh opbehavior.hh opcodes.hh cover.hh \
+ type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh sleigh_arch.hh \
+ filemanage.hh sleigh.hh sleighbase.hh slghsymbol.hh semantics.hh \
+ context.hh slghpatexpress.hh slghpattern.hh ifacedecomp.hh ifaceterm.hh \
+ interface.hh graph.hh funcdata.hh override.hh heritage.hh merge.hh \
+ dynamic.hh grammar.hh callgraph.hh paramid.hh
+libdecomp_dbg.o: libdecomp_dbg.cc libdecomp.hh architecture.hh \
+ capability.hh types.h varmap.hh database.hh variable.hh varnode.hh \
+ pcoderaw.hh address.hh space.hh error.hh xml.hh opbehavior.hh opcodes.hh \
+ cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh jumptable.hh \
+ emulateutil.hh emulate.hh memstate.hh loadimage.hh translate.hh float.hh \
+ op.hh typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh \
+ rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh comment.hh \
+ userop.hh options.hh transform.hh prefersplit.hh sleigh_arch.hh \
+ filemanage.hh sleigh.hh sleighbase.hh slghsymbol.hh semantics.hh \
+ context.hh slghpatexpress.hh slghpattern.hh ifacedecomp.hh ifaceterm.hh \
+ interface.hh graph.hh funcdata.hh override.hh heritage.hh merge.hh \
+ dynamic.hh grammar.hh callgraph.hh paramid.hh
+loadimage_bfd.o: loadimage_bfd.cc loadimage_bfd.hh loadimage.hh \
+ address.hh space.hh error.hh types.h xml.hh
+loadimage_xml.o: loadimage_xml.cc loadimage_xml.hh loadimage.hh \
+ address.hh space.hh error.hh types.h xml.hh translate.hh pcoderaw.hh \
+ opbehavior.hh opcodes.hh float.hh
+raw_arch.o: raw_arch.cc raw_arch.hh sleigh_arch.hh filemanage.hh \
+ architecture.hh capability.hh types.h varmap.hh database.hh variable.hh \
+ varnode.hh pcoderaw.hh address.hh space.hh error.hh xml.hh opbehavior.hh \
+ opcodes.hh cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh \
+ jumptable.hh emulateutil.hh emulate.hh memstate.hh loadimage.hh \
+ translate.hh float.hh op.hh typeop.hh cpool.hh printlanguage.hh cast.hh \
+ prettyprint.hh rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh \
+ comment.hh userop.hh options.hh transform.hh prefersplit.hh sleigh.hh \
+ sleighbase.hh slghsymbol.hh semantics.hh context.hh slghpatexpress.hh \
+ slghpattern.hh
+rulecompile.o: rulecompile.cc
+sleigh_arch.o: sleigh_arch.cc sleigh_arch.hh filemanage.hh \
+ architecture.hh capability.hh types.h varmap.hh database.hh variable.hh \
+ varnode.hh pcoderaw.hh address.hh space.hh error.hh xml.hh opbehavior.hh \
+ opcodes.hh cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh \
+ jumptable.hh emulateutil.hh emulate.hh memstate.hh loadimage.hh \
+ translate.hh float.hh op.hh typeop.hh cpool.hh printlanguage.hh cast.hh \
+ prettyprint.hh rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh \
+ comment.hh userop.hh options.hh transform.hh prefersplit.hh sleigh.hh \
+ sleighbase.hh slghsymbol.hh semantics.hh context.hh slghpatexpress.hh \
+ slghpattern.hh inject_sleigh.hh
+test.o: test.cc libdecomp.hh architecture.hh capability.hh types.h \
+ varmap.hh database.hh variable.hh varnode.hh pcoderaw.hh address.hh \
+ space.hh error.hh xml.hh opbehavior.hh opcodes.hh cover.hh type.hh \
+ partmap.hh rangemap.hh action.hh block.hh jumptable.hh emulateutil.hh \
+ emulate.hh memstate.hh loadimage.hh translate.hh float.hh op.hh \
+ typeop.hh cpool.hh printlanguage.hh cast.hh prettyprint.hh rangeutil.hh \
+ pcodeinject.hh fspec.hh globalcontext.hh comment.hh userop.hh options.hh \
+ transform.hh prefersplit.hh sleigh_arch.hh filemanage.hh sleigh.hh \
+ sleighbase.hh slghsymbol.hh semantics.hh context.hh slghpatexpress.hh \
+ slghpattern.hh ifacedecomp.hh ifaceterm.hh interface.hh graph.hh \
+ funcdata.hh override.hh heritage.hh merge.hh dynamic.hh grammar.hh \
+ callgraph.hh paramid.hh printc.hh raw_arch.hh
+unify.o: unify.cc
+xml_arch.o: xml_arch.cc xml_arch.hh sleigh_arch.hh filemanage.hh \
+ architecture.hh capability.hh types.h varmap.hh database.hh variable.hh \
+ varnode.hh pcoderaw.hh address.hh space.hh error.hh xml.hh opbehavior.hh \
+ opcodes.hh cover.hh type.hh partmap.hh rangemap.hh action.hh block.hh \
+ jumptable.hh emulateutil.hh emulate.hh memstate.hh loadimage.hh \
+ translate.hh float.hh op.hh typeop.hh cpool.hh printlanguage.hh cast.hh \
+ prettyprint.hh rangeutil.hh pcodeinject.hh fspec.hh globalcontext.hh \
+ comment.hh userop.hh options.hh transform.hh prefersplit.hh sleigh.hh \
+ sleighbase.hh slghsymbol.hh semantics.hh context.hh slghpatexpress.hh \
+ slghpattern.hh loadimage_xml.hh
+sleigh.o: sleigh.cc sleigh.hh sleighbase.hh translate.hh pcoderaw.hh \
+ address.hh space.hh error.hh types.h xml.hh opbehavior.hh opcodes.hh \
+ float.hh slghsymbol.hh semantics.hh context.hh globalcontext.hh \
+ partmap.hh slghpatexpress.hh slghpattern.hh loadimage.hh
+pcodeparse.o: pcodeparse.cc pcodeparse.hh pcodecompile.hh slghsymbol.hh \
+ semantics.hh context.hh globalcontext.hh pcoderaw.hh address.hh space.hh \
+ error.hh types.h xml.hh opbehavior.hh opcodes.hh partmap.hh \
+ slghpatexpress.hh slghpattern.hh sleighbase.hh translate.hh float.hh
